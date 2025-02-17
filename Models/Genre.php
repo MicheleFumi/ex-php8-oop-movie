@@ -3,9 +3,13 @@
 
 class Genre
 {
-    public $genre;
-    function __construct($_genre)
+    protected $genre;
+    public function __construct($_genre)
     {
         $this->genre = $_genre;
+    }
+    public function getgenres()
+    {
+        return $this->genre;
     }
 }

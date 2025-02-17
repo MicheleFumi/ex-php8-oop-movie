@@ -7,7 +7,7 @@ class Movie
     public $title;
     public $director;
     public $year;
-    public $genre;
+    protected Genre $genre;
     function __construct($_title, $_director, $_year, Genre $_genre)
     {
         $this->title = $_title;
@@ -17,6 +17,6 @@ class Movie
     }
     public function getGenres()
     {
-        return implode(", ", $this->genre->genre);
+        return implode(", ", $this->genre->getGenres());
     }
 }
