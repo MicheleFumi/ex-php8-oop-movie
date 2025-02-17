@@ -17,6 +17,7 @@ class Movie
     }
     public function setMovie()
     {
-        echo "$this->title è stato girato da $this->director, nel $this->year. Come genere è $this->genre";
+        $genres_list = implode(", ", $this->genre->genre);
+        echo "$this->title è stato girato da $this->director, nel $this->year. Come generi è: $genres_list";
     }
 }

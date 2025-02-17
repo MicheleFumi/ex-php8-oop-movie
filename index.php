@@ -4,9 +4,10 @@ require_once './Models/Genre.php';
 
 
 
-$movie1 = new Movie("Ritorno al futuro (Back to the Future)", "Robert Zemeckis", 1985, new Genre("sci-fi"));
-$movie2 = new Movie("Il Signore degli Anelli: La Compagnia dell'Anello", "Peter Jackson", 2001,  new Genre("Adventure"));
-var_dump($movie1)
+$movie1 = new Movie("Ritorno al futuro (Back to the Future)", "Robert Zemeckis", 1985, new Genre(["sci-fi", "azione", "avventura"]));
+$movie2 = new Movie("Il Signore degli Anelli: La Compagnia dell'Anello", "Peter Jackson", 2001,  new Genre(["Adventure", "drammatico", "fantasy"]));
+var_dump($movie1);
+
 ?>
 
 <!doctype html>
