@@ -15,9 +15,8 @@ class Movie
         $this->year = $_year;
         $this->genre = $_genre;
     }
-    public function setMovie()
+    public function getGenres()
     {
-        $genres_list = implode(", ", $this->genre->genre);
-        echo "$this->title è stato girato da $this->director, nel $this->year. Come generi è: $genres_list";
+        return implode(", ", $this->genre->genre);
     }
 }
