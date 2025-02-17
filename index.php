@@ -1,3 +1,29 @@
+<?php
+
+class Movie
+{
+
+    public $title;
+    public $director;
+    public $year;
+
+    function __construct($_title, $_director, $_year)
+    {
+        $this->title = $_title;
+        $this->director = $_director;
+        $this->year = $_year;
+    }
+
+    public function setMovie()
+    {
+        echo "$this->title è stato girato da $this->director, nel $this->year";
+    }
+}
+$movie1 = new Movie("Ritorno al futuro (Back to the Future)", "Robert Zemeckis", 1985);
+$movie2 = new Movie("Il Signore degli Anelli: La Compagnia dell'Anello", "Peter Jackson", 2001);
+var_dump($movie1)
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -18,7 +44,10 @@
 </head>
 
 <body>
-
+    <?php $movie1->setMovie();
+    echo "<br>";
+    $movie2->setMovie();
+    ?>
 </body>
 
 </html>
