@@ -1,26 +1,11 @@
 <?php
+require_once './Models/Movie.php';
+require_once './Models/Genre.php';
 
-class Movie
-{
 
-    public $title;
-    public $director;
-    public $year;
 
-    function __construct($_title, $_director, $_year)
-    {
-        $this->title = $_title;
-        $this->director = $_director;
-        $this->year = $_year;
-    }
-
-    public function setMovie()
-    {
-        echo "$this->title è stato girato da $this->director, nel $this->year";
-    }
-}
-$movie1 = new Movie("Ritorno al futuro (Back to the Future)", "Robert Zemeckis", 1985);
-$movie2 = new Movie("Il Signore degli Anelli: La Compagnia dell'Anello", "Peter Jackson", 2001);
+$movie1 = new Movie("Ritorno al futuro (Back to the Future)", "Robert Zemeckis", 1985, new Genre("sci-fi"));
+$movie2 = new Movie("Il Signore degli Anelli: La Compagnia dell'Anello", "Peter Jackson", 2001,  new Genre("Adventure"));
 var_dump($movie1)
 ?>
 
