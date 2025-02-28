@@ -1,7 +1,6 @@
 <?php
 require_once './Movie.php';
-$movie1 = new Movie("Blade Runner 2049", "Blade Runner 2049", 2017, "Denis Villeneuve", "Sci-Fi", true);
-$movie2 = new Movie("Il Signore degli Anelli: La Compagnia dell'Anello", "The Lord of the Rings: The Fellowship of the Ring", 2001, "Peter Jackson", "Fantasy", false)
+include_once './database.php';
 ?>
 
 <!doctype html>
@@ -31,34 +30,26 @@ $movie2 = new Movie("Il Signore degli Anelli: La Compagnia dell'Anello", "The Lo
         <div class="container py-3">
             <div class="row">
                 <div class="col col-4 d-flex gap-4 align-items-stretch">
-                    <!-- card movie1 -->
-                    <div class="card shadow rounded-3 border-0" style="width: 18rem; height: auto;">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                                class="card-img-top rounded-top-3"
-                                alt="...">
+                    <?php foreach ($database as $movie) {
+
+                    ?>
+                        <!-- card movie1 -->
+                        <div class="card shadow rounded-3 border-0" style="width: 18rem; height: auto;">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                                    class="card-img-top rounded-top-3"
+                                    alt="...">
+                            </div>
+
+
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $movie->name ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $movie->originalName ?></h6>
+                                <p class="card-text"><?php echo $movie->year . " - " . $movie->director ?></p>
+                                <?php echo $movie->isAvailable() ?>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $movie1->name ?></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><?php echo $movie1->originalName ?></h6>
-                            <p class="card-text"><?php echo $movie1->year . " - " . $movie1->director ?></p>
-                            <?php echo $movie1->isAvailable() ?>
-                        </div>
-                    </div>
-                    <!-- card movie2 -->
-                    <div class="card shadow rounded-3 border-0" style="width: 18rem; height: auto;">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                                class="card-img-top rounded-top-3"
-                                alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $movie2->name ?></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><?php echo $movie2->originalName ?></h6>
-                            <p class="card-text"><?php echo $movie2->year . " - " . $movie2->director ?></p>
-                            <?php echo $movie2->isAvailable() ?>
-                        </div>
-                    </div>
+                    <?php } ?>
 
                 </div>
             </div>
