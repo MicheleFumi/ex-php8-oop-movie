@@ -29,7 +29,7 @@ include_once './database.php';
     <main>
         <div class="container py-3">
             <div class="row">
-                <div class="col col-4 d-flex gap-4 align-items-stretch">
+                <div class="col col-12 d-flex gap-4 align-items-stretch">
                     <?php foreach ($database as $movie) {
 
                     ?>
